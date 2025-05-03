@@ -108,9 +108,9 @@ function generateEquation() {
   }
 
   // Устанавливаем флаги для вероятностей
-  const isAEqualToOne = Math.random() < 0.7 // 60% вероятность для a = 1
-  const isBZero = Math.random() < 0.15       // 20% вероятность для b = 0
-  const isCZero = Math.random() < 0.15       // 20% вероятность для c = 0
+  const isAEqualToOne = Math.random() < 0.8 // 60% вероятность для a = 1
+  const isBZero = Math.random() < 0.1       // 20% вероятность для b = 0
+  const isCZero = Math.random() < 0.1       // 20% вероятность для c = 0
 
   while (true) {
     a.value = isAEqualToOne ? 1 : getRandomInt(-5, 5, true)
