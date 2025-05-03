@@ -149,7 +149,7 @@ function checkAnswer() {
     let r2Text = userX2.value.replace(',', '.')
 
     if (r2Text === '') {
-        r1Text = r2Text
+        r2Text = r1Text
     }
 
     const r1 = parseExpr(r1Text)
