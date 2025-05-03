@@ -100,31 +100,38 @@ function loadEquationFromLocalStorage() {
 }
 
 function generateEquation() {
-    function getRandomInt(min, max, excludeZero = false) {
-        let x
-        do x = Math.floor(Math.random() * (max - min + 1)) + min
-        while (excludeZero && x === 0)
-        return x
-    }
+  function getRandomInt(min, max, excludeZero = false) {
+    let x
+    do x = Math.floor(Math.random() * (max - min + 1)) + min
+    while (excludeZero && x === 0)
+    return x
+  }
 
-    while (true) {
-        a.value = getRandomInt(-5, 5, true)
-        b.value = getRandomInt(-15, 15)
-        c.value = getRandomInt(-50, 50)
-        const D = b.value * b.value - 4 * a.value * c.value
-        if (D >= 0 && Math.sqrt(D) % 1 === 0) {
-            const x1 = (-b.value + Math.sqrt(D)) / (2 * a.value)
-            const x2 = (-b.value - Math.sqrt(D)) / (2 * a.value)
-            realRoots.value = [x1, x2].sort()
-            break
-        }
-    }
+  // Устанавливаем флаги для вероятностей
+  const isAEqualToOne = Math.random() < 0.7 // 60% вероятность для a = 1
+  const isBZero = Math.random() < 0.15       // 20% вероятность для b = 0
+  const isCZero = Math.random() < 0.15       // 20% вероятность для c = 0
 
-    userX1.value = ''
-    userX2.value = ''
-    resultMessage.value = ''
-    isSolved.value = false // Сбрасываем состояние
-    saveEquationToLocalStorage()
+  while (true) {
+    a.value = isAEqualToOne ? 1 : getRandomInt(-5, 5, true)
+    b.value = isBZero ? 0 : getRandomInt(-15, 15)
+    c.value = isCZero ? 0 : getRandomInt(-50, 50)
+
+    const D = b.value * b.value - 4 * a.value * c.value
+    if (D >= 0 && Math.sqrt(D) % 1 === 0) {
+      const x1 = (-b.value + Math.sqrt(D)) / (2 * a.value)
+      const x2 = (-b.value - Math.sqrt(D)) / (2 * a.value)
+      realRoots.value = [x1, x2].sort()
+      break
+    }
+  }
+
+  // Сброс состояния
+  userX1.value = ''
+  userX2.value = ''
+  resultMessage.value = ''
+  isSolved.value = false
+  saveEquationToLocalStorage()
 }
 
 function parseExpr(expr) {

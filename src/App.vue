@@ -1,28 +1,56 @@
 <template>
-  <div>
-    <nav class="navigation">
-      <router-link to="/">Главная</router-link>
-      <router-link to="/theory">Теория</router-link>
-    </nav>
-    <router-view />
+  <div class="app-container">
+    <!-- Основной контент -->
+    <main class="main-content">
+      <router-view />
+    </main>
+    <!-- Футер -->
+    <footer class="footer">
+      <router-link to="/theory">Как решать?</router-link>
+      <p>
+        Вайб-кодинг от <a href="https://t.me/razumeyetsa" target="_blank">@razumeyetsa</a>, 2025
+      </p>
+    </footer>
   </div>
 </template>
 
 <style>
-.navigation {
+/* Общий контейнер */
+.app-container {
   display: flex;
-  justify-content: center;
-  gap: 1em;
-  margin-bottom: 1.5em;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.navigation a {
+/* Основной контент */
+.main-content {
+  flex: 1;
+  /* Занимает всё доступное пространство */
+  padding: 2em;
+  background-color: #fff;
+}
+
+/* Футер */
+.footer {
+  background-color: #f9f9f9;
+  padding: 1em 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.footer a {
   text-decoration: none;
   color: #007BFF;
-  font-weight: bold;
+  margin-bottom: 0em; /* Уменьшен отступ */
 }
 
-.navigation a:hover {
+.footer a:hover {
   text-decoration: underline;
+}
+
+.footer p {
+  margin: 0; /* Убираем лишние отступы */
 }
 </style>
