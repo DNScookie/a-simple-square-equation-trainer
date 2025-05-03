@@ -114,8 +114,8 @@ function generateEquation() {
 
   while (true) {
     a.value = isAEqualToOne ? 1 : getRandomInt(-5, 5, true)
-    b.value = isBZero ? 0 : getRandomInt(-15, 15)
-    c.value = isCZero ? 0 : getRandomInt(-50, 50)
+    b.value = isBZero ? 0 : getRandomInt(-15, 15, true)
+    c.value = isCZero ? 0 : getRandomInt(-50, 50, true)
 
     const D = b.value * b.value - 4 * a.value * c.value
     if (D >= 0 && Math.sqrt(D) % 1 === 0) {
