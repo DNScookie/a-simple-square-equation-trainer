@@ -1,5 +1,17 @@
-# Vue 3 + Vite
+# Тренажёр квадратных уравнений
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![Preview](https://a-simple-square-equation-trainer.vercel.app/squareroot_cuadrad_3927.png)
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+Тренажёр квадратных уравнений — это веб-приложение, которое помогает пользователям практиковаться в решении квадратных уравнений. Приложение предоставляет удобный интерфейс для ввода корней, проверки решений и изучения теории.
+
+## Функциональность
+
+- Генерация случайных квадратных уравнений.
+- Проверка правильности введённых корней.
+- Сохранение прогресса пользователя.
+- Теоретическая справка о квадратных уравнениях.
+- Адаптивный интерфейс для работы на мобильных устройствах.
+
+## Демо
+
+Попробуйте приложение здесь: [Тренажёр квадратных уравнений](https://a-simple-square-equation-trainer.vercel.app/)
