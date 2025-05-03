@@ -10,6 +10,9 @@
       <p>
         Вайб-кодинг от <a href="https://t.me/razumeyetsa" target="_blank">@razumeyetsa</a>, 2025
       </p>
+      <p>
+        Github: <a href="https://github.com/DNScookie/a-simple-square-equation-trainer" target="_blank">a-simple-square-equation-trainer</a>
+      </p>
     </footer>
   </div>
 </template>
